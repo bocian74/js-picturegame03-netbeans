@@ -112,6 +112,19 @@ function picarrayPrep(){
     for (var i=0; i<12; i++){
         picArray[i]="img/"+picArraytmp[i];
     }
+    if (document.documentElement.clientWidth < 1100){
+        for (var i=0; i<12; i++){
+        picArray[i]="img_smaller/"+picArraytmp[i];
+        }
+        questionmark = "img_smaller/questionmark.jpg";
+    }
+    if (document.documentElement.clientWidth < 860){
+        for (var i=0; i<12; i++){
+        picArray[i]="img_smallest/"+picArraytmp[i];
+        }
+        questionmark = "img_smallest/questionmark.jpg";
+    }
+    
 }
 
 function przygotujEkran (){
@@ -237,6 +250,7 @@ function wygrana(){
 
 
 window.onload = function() {
+    console.log(document.documentElement.clientWidth);
     tablicaInit();
     tablicaRefInit();
     wypelnijTablice();
